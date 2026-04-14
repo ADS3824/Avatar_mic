@@ -40,9 +40,9 @@ const config = {
     }
 };
 
-// OpenAI Client
+// OpenAI Client (Foundry)
 const openaiBaseUrl = config.openai.endpoint
-    ? `${config.openai.endpoint.replace(/\/+$/, '')}/openai`
+    ? config.openai.endpoint.replace(/\/+$/, '')   // Foundry endpoint, no extra /openai
     : undefined;
 
 const openaiClient = new OpenAI({
